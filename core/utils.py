@@ -79,8 +79,8 @@ def recognize_plate(img, coords):
             plate_num += clean_text
         except: 
             text = None
-    if plate_num != None:
-        print("License Plate #: ", plate_num)
+    # if plate_num != None:
+        # print("License Plate #: ", plate_num)
     #cv2.imshow("Character's Segmented", im2)
     #cv2.waitKey(0)
     return plate_num
@@ -249,7 +249,7 @@ def draw_bbox(image, bboxes, info = False, counted_classes = None, show_label=Tr
             cv2.rectangle(image, c1, c2, bbox_color, bbox_thick)
 
             if info:
-                print("Object found: {}, Confidence: {:.2f}, BBox Coords (xmin, ymin, xmax, ymax): {}, {}, {}, {} ".format(class_name, score, coor[0], coor[1], coor[2], coor[3]))
+                print("Object found: {}, Confidence: {:.2f}, BBox Coords ({}, {}, {}, {}) ".format(class_name, score, coor[0], coor[1], coor[2], coor[3]))
 
             if show_label:
                 bbox_mess = '%s: %.2f' % (class_name, score)
